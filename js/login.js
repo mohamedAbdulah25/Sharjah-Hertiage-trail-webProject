@@ -106,17 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const terms = f("signup-terms");
   const termsError = f("terms-error");
-  const strengthBar = signupForm.querySelector(".strength-bar");
-  const strengthLabel = signupForm.querySelector("[data-strength-label]");
-
-  const strengthOf = (password) => {
-    let score = 0;
-    if (password.length >= 8) score += 1;
-    if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score += 1;
-    if (/\d/.test(password)) score += 1;
-    if (/[^A-Za-z0-9]/.test(password) || password.length >= 12) score += 1;
-    return password ? Math.max(1, score) : 0;
-  };
 
   const rules = {
     name: (v) => (!v ? "Enter your name." : !/^[A-Za-z ]{3,30}$/.test(v) ? "Use 3–30 letters and spaces." : ""),
@@ -147,12 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  signup.password.addEventListener("input", () => {
-    const score = strengthOf(signup.password.value);
-    strengthBar.dataset.strength = score;
-    strengthLabel.textContent = ["At least 8 characters, with a letter and a number.", "Weak password", "Fair password", "Good password", "Strong password"][score];
-  });
-
   terms.addEventListener("change", () => (termsError.style.display = ""));
 
   signupForm.addEventListener("submit", async (event) => {
@@ -167,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = signup.name.value.trim().replace(/\s+/g, " ");
     await registerUser(name, signup.email.value.trim(), signup.password.value);
     signupForm.reset();
-    strengthBar.dataset.strength = 0;
     showView("account");
     showToast(`Account created. Welcome, ${name.split(" ")[0]}!`, "🎉");
   });

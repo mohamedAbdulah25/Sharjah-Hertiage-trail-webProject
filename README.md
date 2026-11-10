@@ -21,7 +21,7 @@ All content is rendered by JavaScript from `data/landmarks.json`, plus any landm
 - **XP and levels:** Visitor (0) → Explorer (200) → Historian (400) → Heritage Guardian (800).
 - **Badges:** First Steps, Museum Lover, Halfway There, Trip Planner, Mission Complete, Heritage Guardian.
 - **Trip planner:** add, remove and drag to reorder stops; automatic times, opening-hour and closed-day warnings, cost (students 50% off) and XP totals; full validation; save, confirm, print, reopen and delete plans.
-- **Explorer accounts:** sign up (name, email, password with strength meter and confirmation) and log in. Each account keeps its own XP, stamps, badges and plans; guest progress moves into a new account on sign-up.
+- **Explorer accounts:** sign up (name, email, password and confirmation) and log in. Each account keeps its own XP, stamps, badges and plans; guest progress moves into a new account on sign-up.
 - **Admin:** separate admin login from the Login page, add/edit/delete landmarks with quizzes, restore edited built-ins, export and import JSON.
 - **Validation:** custom error messages on every form (trip planner, contact, explorer name, admin login and landmark form).
 

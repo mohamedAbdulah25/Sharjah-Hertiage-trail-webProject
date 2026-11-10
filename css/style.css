@@ -2816,41 +2816,6 @@ audio {
   font-size: 1.4rem;
 }
 
-.strength {
-  height: 6px;
-  border-radius: 999px;
-  background: var(--surface-alt);
-  overflow: hidden;
-}
-
-.strength-bar {
-  display: block;
-  height: 100%;
-  width: 0;
-  border-radius: inherit;
-  transition: width 0.3s, background-color 0.3s;
-}
-
-.strength-bar[data-strength="1"] {
-  width: 25%;
-  background: var(--danger);
-}
-
-.strength-bar[data-strength="2"] {
-  width: 50%;
-  background: var(--warning);
-}
-
-.strength-bar[data-strength="3"] {
-  width: 75%;
-  background: var(--gold);
-}
-
-.strength-bar[data-strength="4"] {
-  width: 100%;
-  background: var(--success);
-}
-
 .check-row {
   display: flex;
   align-items: center;
