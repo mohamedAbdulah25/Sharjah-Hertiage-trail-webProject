@@ -34,17 +34,56 @@ document.addEventListener("DOMContentLoaded", () => {
     counter.textContent = `${fields.message.value.length}/500 characters`;
   });
 
-  form.addEventListener("submit", (event) => {
+  const errorBox = document.getElementById("contact-error");
+  const sendButton = form.querySelector('button[type="submit"]');
+
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    success.classList.add("hidden");
+    errorBox.classList.add("hidden");
     const results = Object.keys(fields).map(validate);
     if (results.includes(false)) {
       form.querySelector(".field.error input, .field.error select, .field.error textarea").focus();
       return;
     }
-    form.reset();
-    counter.textContent = "20–500 characters";
-    success.classList.remove("hidden");
-    showToast("Message sent. Thank you!", "✉️");
+    const subject = fields.subject.value;
+    const payload = {
+      name: fields.name.value.trim(),
+      email: fields.email.value.trim(),
+      phone: fields.phone.value.trim() || "Not provided",
+      subject,
+      message: fields.message.value.trim(),
+      _subject: `Heritage Trail contact: ${subject}`,
+      _replyto: fields.email.value.trim(),
+      _template: "table",
+      _captcha: "false"
+    };
+    sendButton.disabled = true;
+    sendButton.textContent = "Sending...";
+    try {
+      const response = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || String(data.success) !== "true") {
+        throw new Error(data.message || "Send failed");
+      }
+      form.reset();
+      counter.textContent = "20–500 characters";
+      success.classList.remove("hidden");
+      showToast("Message sent. Thank you!", "✉️");
+    } catch (error) {
+      const needsActivation = /activat/i.test(error.message);
+      errorBox.innerHTML = needsActivation
+        ? `This contact form is being set up. An activation email has been sent to <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>. Once it's confirmed, messages will be delivered.`
+        : `Sorry, your message couldn't be sent. Please try again, or email us at <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`;
+      errorBox.classList.remove("hidden");
+    } finally {
+      sendButton.disabled = false;
+      sendButton.textContent = "Send message";
+    }
   });
 
   form.addEventListener("reset", () => {

@@ -103,6 +103,10 @@ Landmarks added through the admin page are saved only in that browser. To publis
 2. Replace `data/landmarks.json` with the exported file.
 3. Commit and push.
 
+## Contact form
+
+Messages from the contact form are sent to `u24103355@sharjah.ac.ae` through [FormSubmit](https://formsubmit.co), a free form-to-email service called from JavaScript (no server code). The first message triggers a one-time activation email to that address; click **Activate Form** in it, and later messages are delivered normally. The address is set in `js/data.js` (`CONTACT_EMAIL`).
+
 ## Notes
 
 - Landmark opening hours and prices are sample data. Check official sources before relying on them.
