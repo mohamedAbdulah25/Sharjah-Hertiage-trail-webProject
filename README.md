@@ -106,4 +106,4 @@ Landmarks added through the admin page are saved only in that browser. To publis
 ## Notes
 
 - Landmark opening hours and prices are sample data. Check official sources before relying on them.
-- Quiz questions marked `[REPLACE WITH ON-SITE DETAIL]` should be replaced with questions about details only visible in person.
+- Quiz questions are based on published facts about each landmark (Wikipedia, Gulf News, Khaleej Times). For stronger proof of a visit, replace them with details only visible on site.
