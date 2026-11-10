@@ -25,6 +25,7 @@
           <li><a href="achievements.html" class="active" aria-current="page">Achievements</a></li>
           <li><a href="plan.html">Plan Your Visit</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="admin.html">Login</a></li>
         </ul>
       </nav>
     </div>
@@ -52,6 +53,10 @@
               <label for="explorer-name">Explorer name</label>
               <input type="text" id="explorer-name" minlength="3" maxlength="20" pattern="[A-Za-z ]{3,20}" required>
               <span class="field-error">Use 3–20 letters and spaces.</span>
+            </div>
+            <div class="form-actions" style="margin-top:.6rem">
+              <button type="submit" class="btn btn-primary btn-sm">Save</button>
+              <button type="button" class="btn btn-outline btn-sm" id="cancel-name" style="color:#fff">Cancel</button>
             </div>
           </form>
           <p>Level: <span class="level-name" data-level>Explorer</span> · <span data-xp>300</span> XP</p>
@@ -153,16 +158,6 @@
       </div>
     </section>
 
-    <div class="modal hidden" id="reset-modal" role="dialog" aria-modal="true" aria-labelledby="reset-title">
-      <div class="modal-box">
-        <h3 id="reset-title">Reset all progress?</h3>
-        <p>This clears your XP, stamps, badges and saved plans. It can't be undone.</p>
-        <div class="modal-actions">
-          <button type="button" class="btn btn-outline" data-modal-cancel>Cancel</button>
-          <button type="button" class="btn btn-danger" data-modal-confirm>Reset</button>
-        </div>
-      </div>
-    </div>
   </main>
 
   <footer class="site-footer">
@@ -202,5 +197,8 @@
   </footer>
 
   <div class="toast-container" id="toasts" aria-live="polite"></div>
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/achievements.js"></script>
 </body>
 </html>

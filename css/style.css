@@ -2901,3 +2901,30 @@ audio {
     scroll-behavior: auto !important;
   }
 }
+
+/* JavaScript states */
+
+.icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.icon-btn:disabled:hover {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.quiz-option:has(input:disabled) {
+  cursor: default;
+}
+
+input[readonly] {
+  background: var(--surface-alt);
+  cursor: not-allowed;
+}

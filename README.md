@@ -10,10 +10,19 @@ Visitors explore landmarks, prove each visit by passing an on-site verification 
 |---|---|
 | Content creation (HTML) | ✅ Done |
 | Presentation (CSS) | ✅ Done |
-| Interaction (JavaScript) | ⏳ Next |
+| Interaction (JavaScript) | ✅ Done |
 | Final submission | ⏳ |
 
-The site currently contains static sample content. The JavaScript stage will render it from `data/landmarks.json` and saved progress.
+All content is rendered by JavaScript from `data/landmarks.json`, plus any landmarks added through the admin page. Progress (XP, stamps, badges, plans) is saved in the browser with localStorage.
+
+## Features
+
+- **Verification quizzes:** pass all questions to verify a visit, earn XP and unlock the landmark's stamp. Wrong answers are highlighted and can be retried.
+- **XP and levels:** Visitor (0) → Explorer (200) → Historian (400) → Heritage Guardian (800).
+- **Badges:** First Steps, Museum Lover, Halfway There, Trip Planner, Mission Complete, Heritage Guardian.
+- **Trip planner:** add, remove and drag to reorder stops; automatic times, opening-hour and closed-day warnings, cost (students 50% off) and XP totals; full validation; save, confirm, print, reopen and delete plans.
+- **Admin:** login, add/edit/delete landmarks with quizzes, restore edited built-ins, export and import JSON.
+- **Validation:** custom error messages on every form (trip planner, contact, explorer name, admin login and landmark form).
 
 ## Pages
 
@@ -26,7 +35,7 @@ The site currently contains static sample content. The JavaScript stage will ren
 | Achievements | `achievements.html` | Profile, level ladder, heritage passport, badges |
 | Plan Your Visit | `plan.html` | Landmark picker, trip details, contact details, trip summary, saved plans |
 | Contact | `contact.html` | Contact form, FAQ, embedded map |
-| Admin | `admin.html` | Login and landmark management (linked from the footer) |
+| Login | `admin.html` | Admin login and landmark management |
 
 ## Folder structure
 
@@ -37,8 +46,10 @@ css/style.css      shared styles
 css/print.css      print layout for the trip plan
 img/               placeholder SVG images
 media/             audio and video (to be supplied)
-js/                JavaScript (next stage)
-data/              landmarks.json (next stage)
+js/data.js         levels, badges and settings
+js/core.js         storage, progress, badges, toasts, helpers
+js/<page>.js       one script per page
+data/landmarks.json built-in landmark data
 ```
 
 ## Admin login
@@ -46,7 +57,7 @@ data/              landmarks.json (next stage)
 - Username: `admin`
 - Password: `admin`
 
-This login runs entirely in the browser and is for demonstration only. It is not real security.
+This login runs entirely in the browser and is for demonstration only. It is not real security: the credentials are visible in `js/data.js`, and quiz answers are visible in `data/landmarks.json`.
 
 ## Media to supply
 
@@ -71,7 +82,7 @@ Open the folder in VS Code and use the **Live Server** extension, or run:
 python -m http.server
 ```
 
-then visit `http://localhost:8000`. From the JavaScript stage onward, a local server is required because `fetch()` can't load `data/landmarks.json` from a file opened directly.
+then visit `http://localhost:8000`. A local server is required because `fetch()` can't load `data/landmarks.json` from a file opened directly.
 
 ## Deploying on GitHub Pages
 

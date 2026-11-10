@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Admin dashboard for managing landmarks.">
-  <title>Admin | Sharjah Heritage Trail</title>
+  <meta name="description" content="Admin login and landmark management.">
+  <title>Login | Sharjah Heritage Trail</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
@@ -26,6 +26,7 @@
           <li><a href="achievements.html">Achievements</a></li>
           <li><a href="plan.html">Plan Your Visit</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="admin.html">Login</a></li>
         </ul>
       </nav>
     </div>
@@ -36,6 +37,7 @@
       <form class="admin-login" id="login-form" novalidate>
         <div class="lock" aria-hidden="true">🔐</div>
         <h1>Admin Login</h1>
+        <p class="hint" style="text-align:center">Sign in to manage landmarks and quizzes.</p>
         <div class="field">
           <label for="admin-user" class="required">Username</label>
           <input type="text" id="admin-user" name="username" autocomplete="username" required>
@@ -50,11 +52,11 @@
           <span class="field-error">Enter your password.</span>
         </div>
         <p class="alert alert-error hidden" id="login-error" role="alert">Incorrect username or password.</p>
-        <button type="submit" class="btn btn-teal btn-block">Log in</button>
+        <button type="submit" class="btn btn-teal btn-block">Admin Login</button>
       </form>
     </section>
 
-    <section class="section" id="dashboard">
+    <section class="section hidden" id="dashboard">
       <div class="container">
         <div class="admin-bar">
           <div>
@@ -146,7 +148,7 @@
               </div>
               <div class="field">
                 <label for="lm-id" class="required">ID (slug)</label>
-                <input type="text" id="lm-id" name="id" pattern="[a-z0-9-]+" placeholder="e.g. al-qasba" required>
+                <input type="text" id="lm-id" name="id" pattern="[a-z0-9\-]+" placeholder="e.g. al-qasba" required>
                 <span class="hint">Lowercase letters, numbers and hyphens. Must be unique.</span>
                 <span class="field-error">Use lowercase letters, numbers and hyphens only.</span>
               </div>
@@ -222,23 +224,23 @@
             <div class="form-grid">
               <div class="field full">
                 <label for="lm-img1" class="required">Image 1 URL</label>
-                <input type="url" id="lm-img1" name="img1" placeholder="https://..." required>
+                <input type="text" id="lm-img1" name="img1" placeholder="https://... or img/name.jpg" required>
                 <span class="field-error">Enter a valid image URL.</span>
               </div>
               <div class="field">
                 <label for="lm-img2">Image 2 URL</label>
-                <input type="url" id="lm-img2" name="img2" placeholder="https://...">
+                <input type="text" id="lm-img2" name="img2" placeholder="https://...">
                 <span class="field-error">Enter a valid image URL.</span>
               </div>
               <div class="field">
                 <label for="lm-img3">Image 3 URL</label>
-                <input type="url" id="lm-img3" name="img3" placeholder="https://...">
+                <input type="text" id="lm-img3" name="img3" placeholder="https://...">
                 <span class="field-error">Enter a valid image URL.</span>
               </div>
               <div class="field full">
                 <label for="lm-audio">Audio narration URL</label>
-                <input type="url" id="lm-audio" name="audio" placeholder="https://... (optional)">
-                <span class="field-error">Enter a valid URL.</span>
+                <input type="text" id="lm-audio" name="audio" placeholder="https://... (optional)">
+                <span class="field-error">Enter a valid URL or path.</span>
               </div>
             </div>
           </fieldset>
@@ -341,16 +343,6 @@
       </div>
     </section>
 
-    <div class="modal hidden" id="delete-modal" role="dialog" aria-modal="true" aria-labelledby="delete-title">
-      <div class="modal-box">
-        <h3 id="delete-title">Delete this landmark?</h3>
-        <p>It will be removed from every page in this browser.</p>
-        <div class="modal-actions">
-          <button type="button" class="btn btn-outline" data-modal-cancel>Cancel</button>
-          <button type="button" class="btn btn-danger" data-modal-confirm>Delete</button>
-        </div>
-      </div>
-    </div>
   </main>
 
   <footer class="site-footer">
@@ -390,5 +382,8 @@
   </footer>
 
   <div class="toast-container" id="toasts" aria-live="polite"></div>
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/admin.js"></script>
 </body>
 </html>

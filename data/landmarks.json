@@ -1,0 +1,140 @@
+[
+  {
+    "id": "heritage-museum",
+    "name": "Sharjah Heritage Museum",
+    "category": "Museum",
+    "short": "Traditional Emirati life, crafts and customs inside a restored family house.",
+    "description": "Set in the Heart of Sharjah heritage district, the Sharjah Heritage Museum occupies Bait Al Naboodah, a coral-stone family house built in the 1840s. Its rooms open onto a shaded courtyard, a design that kept families cool long before air conditioning. Galleries cover the full cycle of Emirati life: birth and childhood, traditional medicine, poetry and storytelling, pearl diving, and the crafts that sustained coastal communities. Look out for the original wind tower, the carved teak doors and the hand-woven sadu textiles.",
+    "location": "Heart of Sharjah, Al Mareija",
+    "duration": 90,
+    "price": 10,
+    "open": "08:00",
+    "close": "20:00",
+    "closedDays": [],
+    "images": ["img/heritage-museum-1.svg", "img/heritage-museum-2.svg", "img/heritage-museum-3.svg"],
+    "audio": "media/narration-heritage-museum.mp3",
+    "xp": 150,
+    "mapX": 58,
+    "mapY": 38,
+    "quiz": [
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What is carved above the main courtyard door?", "options": ["A falcon", "A palm tree", "A dhow boat"], "answer": 1 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] How many sides does the wind tower have?", "options": ["Two", "Four", "Six"], "answer": 1 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What colour is the cushion in the majlis room?", "options": ["Red", "Green", "Blue"], "answer": 0 }
+    ]
+  },
+  {
+    "id": "al-noor",
+    "name": "Al Noor Mosque",
+    "category": "Religious",
+    "short": "An Ottoman-style mosque on the Khalid Lagoon, open to visitors for guided tours.",
+    "description": "Inspired by the Blue Mosque in Istanbul, Al Noor Mosque sits on the Khobaib corniche overlooking the Khalid Lagoon. Its central dome, slender twin minarets and limestone walls glow at night when the mosque is lit. Visitors can join guided tours that explain Islamic customs and the mosque's architecture. Modest dress is required, and abayas and headscarves are provided at the entrance.",
+    "location": "Khalid Lagoon Corniche, Al Majaz",
+    "duration": 45,
+    "price": 0,
+    "open": "10:00",
+    "close": "17:00",
+    "closedDays": [5],
+    "images": ["img/al-noor-1.svg", "img/al-noor-2.svg", "img/al-noor-3.svg"],
+    "audio": "media/narration-al-noor.mp3",
+    "xp": 150,
+    "mapX": 52,
+    "mapY": 52,
+    "quiz": [
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What colour is the carpet in the main prayer hall?", "options": ["Red", "Blue", "Green"], "answer": 0 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] How many small domes surround the main dome?", "options": ["Two", "Four", "Eight"], "answer": 2 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What is written above the main entrance?", "options": ["A verse from the Quran", "The mosque's opening date", "The name of the architect"], "answer": 0 }
+    ]
+  },
+  {
+    "id": "islamic-civilization",
+    "name": "Museum of Islamic Civilization",
+    "category": "Museum",
+    "short": "Over 5,000 artefacts covering Islamic science, art and faith under a golden dome.",
+    "description": "Housed in a former souq on the Corniche, the Sharjah Museum of Islamic Civilization displays more than 5,000 artefacts from across the Islamic world. Galleries are devoted to faith, science and technology, and the decorative arts, from astrolabes and early medical instruments to ceramics, calligraphy and textiles. Don't miss the central dome, decorated with a mosaic of the zodiac.",
+    "location": "Corniche Street, Al Majarrah",
+    "duration": 120,
+    "price": 10,
+    "open": "08:00",
+    "close": "20:00",
+    "closedDays": [],
+    "images": ["img/islamic-civilization-1.svg", "img/islamic-civilization-2.svg", "img/islamic-civilization-3.svg"],
+    "audio": "media/narration-islamic-civilization.mp3",
+    "xp": 150,
+    "mapX": 51,
+    "mapY": 22,
+    "quiz": [
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What is shown in the mosaic inside the central dome?", "options": ["The zodiac", "A map of Arabia", "Calligraphy only"], "answer": 0 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] Which instrument is in the first case of the science gallery?", "options": ["An astrolabe", "A compass", "A sundial"], "answer": 0 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What colour is the museum's main dome?", "options": ["Gold", "White", "Turquoise"], "answer": 0 }
+    ]
+  },
+  {
+    "id": "art-museum",
+    "name": "Sharjah Art Museum",
+    "category": "Museum",
+    "short": "The region's largest art museum, with Orientalist works and modern Arab art.",
+    "description": "Sharjah Art Museum is one of the largest art museums in the Gulf. Its permanent collection includes Orientalist paintings and maps from the Barjeel and ruler's collections, alongside modern and contemporary works by Arab artists. Rotating exhibitions are hosted throughout the year, many linked to the Sharjah Biennial.",
+    "location": "Arts Area, Al Shuwaiheen",
+    "duration": 60,
+    "price": 0,
+    "open": "08:00",
+    "close": "20:00",
+    "closedDays": [],
+    "images": ["img/art-museum-1.svg", "img/art-museum-2.svg", "img/art-museum-3.svg"],
+    "audio": "media/narration-art-museum.mp3",
+    "xp": 100,
+    "mapX": 70,
+    "mapY": 30,
+    "quiz": [
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What animal appears in the large painting at the entrance?", "options": ["A camel", "A horse", "A falcon"], "answer": 1 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] How many floors of galleries are open to visitors?", "options": ["One", "Two", "Three"], "answer": 1 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What colour are the gallery walls on the ground floor?", "options": ["White", "Dark grey", "Sand"], "answer": 0 }
+    ]
+  },
+  {
+    "id": "al-hisn",
+    "name": "Al Hisn Sharjah",
+    "category": "Historic",
+    "short": "The 1820s fort that was once home to the ruling family, now a museum.",
+    "description": "Built around 1820, Al Hisn Sharjah was the seat of the ruling Al Qasimi family and the emirate's first line of defence. The fort was almost entirely demolished in 1969, then carefully rebuilt using original materials and reopened as a museum. Inside, exhibits trace the history of the ruling family, the town's trade and the fort's own story, including a restored prison cell and the original wooden gate.",
+    "location": "Al Hisn Avenue, Heart of Sharjah",
+    "duration": 60,
+    "price": 10,
+    "open": "08:00",
+    "close": "20:00",
+    "closedDays": [],
+    "images": ["img/al-hisn-1.svg", "img/al-hisn-2.svg", "img/al-hisn-3.svg"],
+    "audio": "media/narration-al-hisn.mp3",
+    "xp": 150,
+    "mapX": 66,
+    "mapY": 48,
+    "quiz": [
+      { "question": "[REPLACE WITH ON-SITE DETAIL] How many towers does the fort have?", "options": ["Two", "Three", "Four"], "answer": 1 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What is the main gate made of?", "options": ["Teak wood", "Iron", "Stone"], "answer": 0 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What object is displayed in the courtyard?", "options": ["A cannon", "A boat", "A well"], "answer": 0 }
+    ]
+  },
+  {
+    "id": "al-majaz",
+    "name": "Al Majaz Waterfront",
+    "category": "Outdoor",
+    "short": "Lagoon-side parks, dancing fountains and cafés, best at sunset.",
+    "description": "Al Majaz Waterfront stretches along the Khalid Lagoon with landscaped gardens, a children's play area, walking paths and a row of restaurants and cafés. In the evening the Sharjah Fountain puts on a music and light show over the water. Come at sunset for views of Al Noor Mosque across the lagoon.",
+    "location": "Khalid Lagoon, Al Majaz",
+    "duration": 90,
+    "price": 0,
+    "open": "08:00",
+    "close": "23:59",
+    "closedDays": [],
+    "images": ["img/al-majaz-1.svg", "img/al-majaz-2.svg", "img/al-majaz-3.svg"],
+    "audio": "media/narration-al-majaz.mp3",
+    "xp": 100,
+    "mapX": 61,
+    "mapY": 68,
+    "quiz": [
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What colour are the benches along the main walkway?", "options": ["White", "Brown", "Blue"], "answer": 1 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What can you see across the lagoon from the fountain?", "options": ["Al Noor Mosque", "The airport", "The desert"], "answer": 0 },
+      { "question": "[REPLACE WITH ON-SITE DETAIL] What is the shape of the amphitheatre seating?", "options": ["Semicircle", "Square", "Straight rows"], "answer": 0 }
+    ]
+  }
+]
