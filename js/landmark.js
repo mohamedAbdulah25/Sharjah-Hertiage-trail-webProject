@@ -49,21 +49,22 @@ document.addEventListener("DOMContentLoaded", async () => {
       <span class="status" id="detail-status"></span>
     </header>
 
-    <div class="gallery">
+    <div class="gallery${images.length === 1 ? " single" : ""}">
       ${images.slice(0, 3).map((src, i) => `
         <figure>
           <img src="${escapeHtml(src)}" alt="${name}, ${captions[i].toLowerCase()}">
-          <figcaption>${captions[i]}</figcaption>
+          <figcaption>${images.length === 1 ? name : captions[i]}</figcaption>
         </figure>`).join("")}
     </div>
 
     <div class="detail-layout">
       <article class="prose clearfix">
         <h2>About this landmark</h2>
+        ${images.length > 1 ? `
         <figure class="float-figure">
-          <img src="${escapeHtml(images[1] || images[0])}" alt="${name}">
+          <img src="${escapeHtml(images[1])}" alt="${name}">
           <figcaption>${name}</figcaption>
-        </figure>
+        </figure>` : ""}
         <p>${escapeHtml(landmark.description)}</p>
 
         ${landmark.audio ? `

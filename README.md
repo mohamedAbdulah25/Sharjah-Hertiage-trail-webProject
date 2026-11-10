@@ -44,7 +44,8 @@ index.html  landmarks.html  landmark.html  map.html
 achievements.html  plan.html  contact.html  admin.html
 css/style.css      shared styles
 css/print.css      print layout for the trip plan
-img/               placeholder SVG images
+img/photos/        landmark photos
+img/               map, avatar and pattern graphics
 media/             audio and video (to be supplied)
 js/data.js         levels, badges and settings
 js/core.js         storage, progress, badges, toasts, helpers
@@ -61,18 +62,18 @@ This login runs entirely in the browser and is for demonstration only. It is not
 
 ## Media to supply
 
-The images in `img/` are placeholders. To use real photos, replace each file with an image of the same name (or update the paths).
+Landmark photos are in `img/photos/`, one per landmark, named by landmark id (e.g. `img/photos/al-noor.jpg`). The home page hero uses `al-noor.jpg` and the promo video poster uses `al-majaz.jpg`. To add more photos to a landmark's gallery, add their paths to its `images` array in `data/landmarks.json` (up to 3).
+
+Still to supply:
 
 | File | Content |
 |---|---|
-| `img/hero.svg` | Home page hero background |
-| `img/<id>-1.svg`, `-2.svg`, `-3.svg` | Three photos per landmark |
-| `img/map.svg` | Illustrated map of Sharjah |
-| `img/avatar.svg` | Default explorer avatar |
 | `media/promo.mp4` | Promotional video on the home page |
 | `media/narration-<id>.mp3` | Audio narration for each landmark |
 
 Landmark ids: `heritage-museum`, `al-noor`, `islamic-civilization`, `art-museum`, `al-hisn`, `al-majaz`.
+
+Note: the current Al Hisn photo shows Al Jahili Fort in Al Ain and should be replaced with a photo of Al Hisn Sharjah.
 
 ## Running locally
 

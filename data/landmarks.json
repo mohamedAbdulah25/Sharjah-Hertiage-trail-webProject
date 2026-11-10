@@ -11,15 +11,41 @@
     "open": "08:00",
     "close": "20:00",
     "closedDays": [],
-    "images": ["img/heritage-museum-1.svg", "img/heritage-museum-2.svg", "img/heritage-museum-3.svg"],
+    "images": [
+      "img/photos/heritage-museum.jpg"
+    ],
     "audio": "media/narration-heritage-museum.mp3",
     "xp": 150,
     "mapX": 58,
     "mapY": 38,
     "quiz": [
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What is carved above the main courtyard door?", "options": ["A falcon", "A palm tree", "A dhow boat"], "answer": 1 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] How many sides does the wind tower have?", "options": ["Two", "Four", "Six"], "answer": 1 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What colour is the cushion in the majlis room?", "options": ["Red", "Green", "Blue"], "answer": 0 }
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What is carved above the main courtyard door?",
+        "options": [
+          "A falcon",
+          "A palm tree",
+          "A dhow boat"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] How many sides does the wind tower have?",
+        "options": [
+          "Two",
+          "Four",
+          "Six"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What colour is the cushion in the majlis room?",
+        "options": [
+          "Red",
+          "Green",
+          "Blue"
+        ],
+        "answer": 0
+      }
     ]
   },
   {
@@ -33,16 +59,44 @@
     "price": 0,
     "open": "10:00",
     "close": "17:00",
-    "closedDays": [5],
-    "images": ["img/al-noor-1.svg", "img/al-noor-2.svg", "img/al-noor-3.svg"],
+    "closedDays": [
+      5
+    ],
+    "images": [
+      "img/photos/al-noor.jpg"
+    ],
     "audio": "media/narration-al-noor.mp3",
     "xp": 150,
     "mapX": 52,
     "mapY": 52,
     "quiz": [
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What colour is the carpet in the main prayer hall?", "options": ["Red", "Blue", "Green"], "answer": 0 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] How many small domes surround the main dome?", "options": ["Two", "Four", "Eight"], "answer": 2 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What is written above the main entrance?", "options": ["A verse from the Quran", "The mosque's opening date", "The name of the architect"], "answer": 0 }
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What colour is the carpet in the main prayer hall?",
+        "options": [
+          "Red",
+          "Blue",
+          "Green"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] How many small domes surround the main dome?",
+        "options": [
+          "Two",
+          "Four",
+          "Eight"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What is written above the main entrance?",
+        "options": [
+          "A verse from the Quran",
+          "The mosque's opening date",
+          "The name of the architect"
+        ],
+        "answer": 0
+      }
     ]
   },
   {
@@ -57,15 +111,41 @@
     "open": "08:00",
     "close": "20:00",
     "closedDays": [],
-    "images": ["img/islamic-civilization-1.svg", "img/islamic-civilization-2.svg", "img/islamic-civilization-3.svg"],
+    "images": [
+      "img/photos/islamic-civilization.jpg"
+    ],
     "audio": "media/narration-islamic-civilization.mp3",
     "xp": 150,
     "mapX": 51,
     "mapY": 22,
     "quiz": [
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What is shown in the mosaic inside the central dome?", "options": ["The zodiac", "A map of Arabia", "Calligraphy only"], "answer": 0 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] Which instrument is in the first case of the science gallery?", "options": ["An astrolabe", "A compass", "A sundial"], "answer": 0 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What colour is the museum's main dome?", "options": ["Gold", "White", "Turquoise"], "answer": 0 }
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What is shown in the mosaic inside the central dome?",
+        "options": [
+          "The zodiac",
+          "A map of Arabia",
+          "Calligraphy only"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] Which instrument is in the first case of the science gallery?",
+        "options": [
+          "An astrolabe",
+          "A compass",
+          "A sundial"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What colour is the museum's main dome?",
+        "options": [
+          "Gold",
+          "White",
+          "Turquoise"
+        ],
+        "answer": 0
+      }
     ]
   },
   {
@@ -80,15 +160,41 @@
     "open": "08:00",
     "close": "20:00",
     "closedDays": [],
-    "images": ["img/art-museum-1.svg", "img/art-museum-2.svg", "img/art-museum-3.svg"],
+    "images": [
+      "img/photos/art-museum.jpg"
+    ],
     "audio": "media/narration-art-museum.mp3",
     "xp": 100,
     "mapX": 70,
     "mapY": 30,
     "quiz": [
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What animal appears in the large painting at the entrance?", "options": ["A camel", "A horse", "A falcon"], "answer": 1 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] How many floors of galleries are open to visitors?", "options": ["One", "Two", "Three"], "answer": 1 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What colour are the gallery walls on the ground floor?", "options": ["White", "Dark grey", "Sand"], "answer": 0 }
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What animal appears in the large painting at the entrance?",
+        "options": [
+          "A camel",
+          "A horse",
+          "A falcon"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] How many floors of galleries are open to visitors?",
+        "options": [
+          "One",
+          "Two",
+          "Three"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What colour are the gallery walls on the ground floor?",
+        "options": [
+          "White",
+          "Dark grey",
+          "Sand"
+        ],
+        "answer": 0
+      }
     ]
   },
   {
@@ -103,15 +209,41 @@
     "open": "08:00",
     "close": "20:00",
     "closedDays": [],
-    "images": ["img/al-hisn-1.svg", "img/al-hisn-2.svg", "img/al-hisn-3.svg"],
+    "images": [
+      "img/photos/al-hisn.jpg"
+    ],
     "audio": "media/narration-al-hisn.mp3",
     "xp": 150,
     "mapX": 66,
     "mapY": 48,
     "quiz": [
-      { "question": "[REPLACE WITH ON-SITE DETAIL] How many towers does the fort have?", "options": ["Two", "Three", "Four"], "answer": 1 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What is the main gate made of?", "options": ["Teak wood", "Iron", "Stone"], "answer": 0 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What object is displayed in the courtyard?", "options": ["A cannon", "A boat", "A well"], "answer": 0 }
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] How many towers does the fort have?",
+        "options": [
+          "Two",
+          "Three",
+          "Four"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What is the main gate made of?",
+        "options": [
+          "Teak wood",
+          "Iron",
+          "Stone"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What object is displayed in the courtyard?",
+        "options": [
+          "A cannon",
+          "A boat",
+          "A well"
+        ],
+        "answer": 0
+      }
     ]
   },
   {
@@ -126,15 +258,41 @@
     "open": "08:00",
     "close": "23:59",
     "closedDays": [],
-    "images": ["img/al-majaz-1.svg", "img/al-majaz-2.svg", "img/al-majaz-3.svg"],
+    "images": [
+      "img/photos/al-majaz.jpg"
+    ],
     "audio": "media/narration-al-majaz.mp3",
     "xp": 100,
     "mapX": 61,
     "mapY": 68,
     "quiz": [
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What colour are the benches along the main walkway?", "options": ["White", "Brown", "Blue"], "answer": 1 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What can you see across the lagoon from the fountain?", "options": ["Al Noor Mosque", "The airport", "The desert"], "answer": 0 },
-      { "question": "[REPLACE WITH ON-SITE DETAIL] What is the shape of the amphitheatre seating?", "options": ["Semicircle", "Square", "Straight rows"], "answer": 0 }
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What colour are the benches along the main walkway?",
+        "options": [
+          "White",
+          "Brown",
+          "Blue"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What can you see across the lagoon from the fountain?",
+        "options": [
+          "Al Noor Mosque",
+          "The airport",
+          "The desert"
+        ],
+        "answer": 0
+      },
+      {
+        "question": "[REPLACE WITH ON-SITE DETAIL] What is the shape of the amphitheatre seating?",
+        "options": [
+          "Semicircle",
+          "Square",
+          "Straight rows"
+        ],
+        "answer": 0
+      }
     ]
   }
 ]
