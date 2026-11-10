@@ -43,6 +43,7 @@
     <section class="container contact-layout">
       <form class="panel" id="contact-form" novalidate>
         <h2>Send a message</h2>
+        <p class="hint">Pressing send opens your email app with your message filled in, addressed to us.</p>
         <div class="form-grid" style="margin-top:1.2rem">
           <div class="field">
             <label for="c-name" class="required">Full name</label>
@@ -78,10 +79,9 @@
             <span class="field-error">Write at least 20 characters.</span>
           </div>
         </div>
-        <p class="alert alert-success hidden" id="contact-success" role="status" style="margin-top:1rem">Thanks! Your message has been sent to our team.</p>
-        <p class="alert alert-error hidden" id="contact-error" role="alert" style="margin-top:1rem">Sorry, your message couldn't be sent. Please try again, or email us at <a href="mailto:u24103355@sharjah.ac.ae">u24103355@sharjah.ac.ae</a>.</p>
+        <p class="alert alert-success hidden" id="contact-success" role="status" style="margin-top:1rem">Your email app should now be open with your message ready. Press <strong>Send</strong> there to deliver it. If nothing opened, email us at <a href="mailto:u24103355@sharjah.ac.ae">u24103355@sharjah.ac.ae</a>.</p>
         <div class="form-actions" style="margin-top:1.2rem">
-          <button type="submit" class="btn btn-primary">Send message</button>
+          <button type="submit" class="btn btn-primary">✉️ Send via email</button>
           <button type="reset" class="btn btn-outline">Clear</button>
         </div>
       </form>

@@ -28,7 +28,6 @@ const ADMIN_USERNAME = "admin";
 const ADMIN_PASSWORD = "admin";
 
 const CONTACT_EMAIL = "u24103355@sharjah.ac.ae";
-const CONTACT_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
 const STORAGE_KEYS = {
   progress: "sht-progress",

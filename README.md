@@ -105,7 +105,7 @@ Landmarks added through the admin page are saved only in that browser. To publis
 
 ## Contact form
 
-Messages from the contact form are sent to `u24103355@sharjah.ac.ae` through [FormSubmit](https://formsubmit.co), a free form-to-email service called from JavaScript (no server code). The first message triggers a one-time activation email to that address; click **Activate Form** in it, and later messages are delivered normally. The address is set in `js/data.js` (`CONTACT_EMAIL`).
+The contact form validates the message, then uses a `mailto:` link to open the visitor's email app with the message, subject and their details filled in, addressed to `u24103355@sharjah.ac.ae`. The visitor presses Send in their email app. No server or outside service is involved. The address is set in `js/data.js` (`CONTACT_EMAIL`).
 
 ## Notes
 
