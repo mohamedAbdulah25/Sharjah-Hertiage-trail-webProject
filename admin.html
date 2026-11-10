@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Admin dashboard for managing landmarks.">
+  <title>Admin | Sharjah Heritage Trail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <meta name="robots" content="noindex">
+</head><body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-mark"><span>✦</span></span>Heritage Trail</a>
+      <span class="xp-pill" id="header-xp" title="Your explorer XP">⭐ <span data-xp>300</span> XP</span>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Open menu"><span></span></label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="landmarks.html">Landmarks</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="plan.html">Plan Your Visit</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <form class="admin-login" id="login-form" novalidate>
+        <div class="lock" aria-hidden="true">🔐</div>
+        <h1>Admin Login</h1>
+        <div class="field">
+          <label for="admin-user" class="required">Username</label>
+          <input type="text" id="admin-user" name="username" autocomplete="username" required>
+          <span class="field-error">Enter your username.</span>
+        </div>
+        <div class="field">
+          <label for="admin-pass" class="required">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="admin-pass" name="password" autocomplete="current-password" required>
+            <button type="button" class="password-toggle" id="toggle-pass" aria-label="Show password">Show</button>
+          </div>
+          <span class="field-error">Enter your password.</span>
+        </div>
+        <p class="alert alert-error hidden" id="login-error" role="alert">Incorrect username or password.</p>
+        <button type="submit" class="btn btn-teal btn-block">Log in</button>
+      </form>
+    </section>
+
+    <section class="section" id="dashboard">
+      <div class="container">
+        <div class="admin-bar">
+          <div>
+            <h1>Admin Dashboard</h1>
+          </div>
+          <div>
+            <button type="button" class="btn btn-outline btn-sm" id="export-json">⬇ Export JSON</button>
+            <label class="btn btn-outline btn-sm" for="import-json">⬆ Import JSON</label>
+            <input type="file" id="import-json" accept="application/json" class="visually-hidden">
+            <button type="button" class="btn btn-danger btn-sm" id="logout">Log out</button>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-box"><strong data-stat-total>6</strong><span>Total landmarks</span></div>
+          <div class="stat-box"><strong data-stat-builtin>6</strong><span>Built-in</span></div>
+          <div class="stat-box"><strong data-stat-custom>0</strong><span>Custom</span></div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption class="visually-hidden">All landmarks</caption>
+            <thead>
+              <tr><th scope="col">Name</th><th scope="col">Category</th><th scope="col">Price</th><th scope="col">Duration</th><th scope="col">Source</th><th scope="col">Actions</th></tr>
+            </thead>
+            <tbody id="admin-table">
+              <tr data-landmark-id="heritage-museum">
+                <td><strong>Sharjah Heritage Museum</strong></td>
+                <td><span class="tag" data-category="Museum">Museum</span></td>
+                <td>10 AED</td>
+                <td>1h 30m</td>
+                <td><span class="source-tag builtin">Built-in</span></td>
+                <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+              </tr>
+              <tr data-landmark-id="al-noor">
+                <td><strong>Al Noor Mosque</strong></td>
+                <td><span class="tag" data-category="Religious">Religious</span></td>
+                <td>Free</td>
+                <td>45m</td>
+                <td><span class="source-tag builtin">Built-in</span></td>
+                <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+              </tr>
+              <tr data-landmark-id="islamic-civilization">
+                <td><strong>Museum of Islamic Civilization</strong></td>
+                <td><span class="tag" data-category="Museum">Museum</span></td>
+                <td>10 AED</td>
+                <td>2h</td>
+                <td><span class="source-tag builtin">Built-in</span></td>
+                <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+              </tr>
+              <tr data-landmark-id="art-museum">
+                <td><strong>Sharjah Art Museum</strong></td>
+                <td><span class="tag" data-category="Museum">Museum</span></td>
+                <td>Free</td>
+                <td>1h</td>
+                <td><span class="source-tag builtin">Built-in</span></td>
+                <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+              </tr>
+              <tr data-landmark-id="al-hisn">
+                <td><strong>Al Hisn Sharjah</strong></td>
+                <td><span class="tag" data-category="Historic">Historic</span></td>
+                <td>10 AED</td>
+                <td>1h</td>
+                <td><span class="source-tag builtin">Built-in</span></td>
+                <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+              </tr>
+              <tr data-landmark-id="al-majaz">
+                <td><strong>Al Majaz Waterfront</strong></td>
+                <td><span class="tag" data-category="Outdoor">Outdoor</span></td>
+                <td>Free</td>
+                <td>1h 30m</td>
+                <td><span class="source-tag builtin">Built-in</span></td>
+                <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <form class="admin-form" id="landmark-form" novalidate>
+          <h2 id="form-title">Add a landmark</h2>
+
+          <fieldset>
+            <legend>Basic details</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="lm-name" class="required">Name</label>
+                <input type="text" id="lm-name" name="name" minlength="3" required>
+                <span class="field-error">Enter a name (at least 3 characters).</span>
+              </div>
+              <div class="field">
+                <label for="lm-id" class="required">ID (slug)</label>
+                <input type="text" id="lm-id" name="id" pattern="[a-z0-9-]+" placeholder="e.g. al-qasba" required>
+                <span class="hint">Lowercase letters, numbers and hyphens. Must be unique.</span>
+                <span class="field-error">Use lowercase letters, numbers and hyphens only.</span>
+              </div>
+              <div class="field">
+                <label for="lm-category" class="required">Category</label>
+                <select id="lm-category" name="category" required>
+                  <option value="">Choose a category</option>
+                  <option>Museum</option>
+                  <option>Religious</option>
+                  <option>Historic</option>
+                  <option>Outdoor</option>
+                </select>
+                <span class="field-error">Choose a category.</span>
+              </div>
+              <div class="field">
+                <label for="lm-location" class="required">Location</label>
+                <input type="text" id="lm-location" name="location" required>
+                <span class="field-error">Enter the location.</span>
+              </div>
+              <div class="field full">
+                <label for="lm-description" class="required">Description</label>
+                <textarea id="lm-description" name="description" minlength="30" required></textarea>
+                <span class="field-error">Write at least 30 characters.</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Visit information</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="lm-duration" class="required">Duration (minutes)</label>
+                <input type="number" id="lm-duration" name="duration" min="10" max="480" required>
+                <span class="field-error">Enter 10–480 minutes.</span>
+              </div>
+              <div class="field">
+                <label for="lm-price" class="required">Price (AED)</label>
+                <input type="number" id="lm-price" name="price" min="0" step="1" required>
+                <span class="field-error">Price can't be negative.</span>
+              </div>
+              <div class="field">
+                <label for="lm-open" class="required">Opening time</label>
+                <input type="time" id="lm-open" name="open" required>
+                <span class="field-error">Enter an opening time.</span>
+              </div>
+              <div class="field">
+                <label for="lm-close" class="required">Closing time</label>
+                <input type="time" id="lm-close" name="close" required>
+                <span class="field-error">Closing time must be after opening time.</span>
+              </div>
+              <div class="field full">
+                <span class="label">Closed days</span>
+                <div class="checkbox-row">
+                  <label class="chip-check"><input type="checkbox" name="closedDays" value="0"><span>Sun</span></label>
+                  <label class="chip-check"><input type="checkbox" name="closedDays" value="1"><span>Mon</span></label>
+                  <label class="chip-check"><input type="checkbox" name="closedDays" value="2"><span>Tue</span></label>
+                  <label class="chip-check"><input type="checkbox" name="closedDays" value="3"><span>Wed</span></label>
+                  <label class="chip-check"><input type="checkbox" name="closedDays" value="4"><span>Thu</span></label>
+                  <label class="chip-check"><input type="checkbox" name="closedDays" value="5"><span>Fri</span></label>
+                  <label class="chip-check"><input type="checkbox" name="closedDays" value="6"><span>Sat</span></label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="lm-xp" class="required">XP value</label>
+                <input type="number" id="lm-xp" name="xp" min="10" max="500" value="100" required>
+                <span class="field-error">Enter 10–500 XP.</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Media</legend>
+            <div class="form-grid">
+              <div class="field full">
+                <label for="lm-img1" class="required">Image 1 URL</label>
+                <input type="url" id="lm-img1" name="img1" placeholder="https://..." required>
+                <span class="field-error">Enter a valid image URL.</span>
+              </div>
+              <div class="field">
+                <label for="lm-img2">Image 2 URL</label>
+                <input type="url" id="lm-img2" name="img2" placeholder="https://...">
+                <span class="field-error">Enter a valid image URL.</span>
+              </div>
+              <div class="field">
+                <label for="lm-img3">Image 3 URL</label>
+                <input type="url" id="lm-img3" name="img3" placeholder="https://...">
+                <span class="field-error">Enter a valid image URL.</span>
+              </div>
+              <div class="field full">
+                <label for="lm-audio">Audio narration URL</label>
+                <input type="url" id="lm-audio" name="audio" placeholder="https://... (optional)">
+                <span class="field-error">Enter a valid URL.</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Map position</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="lm-x" class="required">X position (%)</label>
+                <input type="number" id="lm-x" name="mapX" min="0" max="100" value="50" required>
+                <span class="field-error">Enter 0–100.</span>
+              </div>
+              <div class="field">
+                <label for="lm-y" class="required">Y position (%)</label>
+                <input type="number" id="lm-y" name="mapY" min="0" max="100" value="50" required>
+                <span class="field-error">Enter 0–100.</span>
+              </div>
+              <div class="field full">
+                <span class="label">Preview</span>
+                <div class="map-preview">
+                  <img src="img/map.svg" alt="Map preview">
+                  <span class="pin visited" id="preview-pin" style="--x: 50%; --y: 50%"><span>★</span></span>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Verification quiz</legend>
+            <div class="quiz-builder">
+                <div class="qb-question">
+                  <div class="field">
+                    <label for="q1-text" class="required">Question 1</label>
+                    <input type="text" id="q1-text" name="q1-text" placeholder="Ask about something visible only on site" required>
+                    <span class="field-error">Enter the question.</span>
+                  </div>
+                  <span class="hint">Select the radio button next to the correct answer.</span>
+                    <div class="qb-option">
+                      <input type="radio" name="q1-correct" value="0" aria-label="Mark option 1 as correct" required>
+                      <input type="text" name="q1-opt0" placeholder="Option 1" required>
+                    </div>
+                    <div class="qb-option">
+                      <input type="radio" name="q1-correct" value="1" aria-label="Mark option 2 as correct">
+                      <input type="text" name="q1-opt1" placeholder="Option 2" required>
+                    </div>
+                    <div class="qb-option">
+                      <input type="radio" name="q1-correct" value="2" aria-label="Mark option 3 as correct">
+                      <input type="text" name="q1-opt2" placeholder="Option 3" required>
+                    </div>
+                </div>
+                <div class="qb-question">
+                  <div class="field">
+                    <label for="q2-text" class="required">Question 2</label>
+                    <input type="text" id="q2-text" name="q2-text" placeholder="Ask about something visible only on site" required>
+                    <span class="field-error">Enter the question.</span>
+                  </div>
+                  <span class="hint">Select the radio button next to the correct answer.</span>
+                    <div class="qb-option">
+                      <input type="radio" name="q2-correct" value="0" aria-label="Mark option 1 as correct" required>
+                      <input type="text" name="q2-opt0" placeholder="Option 1" required>
+                    </div>
+                    <div class="qb-option">
+                      <input type="radio" name="q2-correct" value="1" aria-label="Mark option 2 as correct">
+                      <input type="text" name="q2-opt1" placeholder="Option 2" required>
+                    </div>
+                    <div class="qb-option">
+                      <input type="radio" name="q2-correct" value="2" aria-label="Mark option 3 as correct">
+                      <input type="text" name="q2-opt2" placeholder="Option 3" required>
+                    </div>
+                </div>
+                <div class="qb-question">
+                  <div class="field">
+                    <label for="q3-text" class="required">Question 3</label>
+                    <input type="text" id="q3-text" name="q3-text" placeholder="Ask about something visible only on site" required>
+                    <span class="field-error">Enter the question.</span>
+                  </div>
+                  <span class="hint">Select the radio button next to the correct answer.</span>
+                    <div class="qb-option">
+                      <input type="radio" name="q3-correct" value="0" aria-label="Mark option 1 as correct" required>
+                      <input type="text" name="q3-opt0" placeholder="Option 1" required>
+                    </div>
+                    <div class="qb-option">
+                      <input type="radio" name="q3-correct" value="1" aria-label="Mark option 2 as correct">
+                      <input type="text" name="q3-opt1" placeholder="Option 2" required>
+                    </div>
+                    <div class="qb-option">
+                      <input type="radio" name="q3-correct" value="2" aria-label="Mark option 3 as correct">
+                      <input type="text" name="q3-opt2" placeholder="Option 3" required>
+                    </div>
+                </div>
+            </div>
+          </fieldset>
+
+          <p class="alert alert-success hidden" id="admin-success" role="status">Landmark saved. It now appears across the site in this browser.</p>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save landmark</button>
+            <button type="reset" class="btn btn-outline" id="cancel-edit">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div class="modal hidden" id="delete-modal" role="dialog" aria-modal="true" aria-labelledby="delete-title">
+      <div class="modal-box">
+        <h3 id="delete-title">Delete this landmark?</h3>
+        <p>It will be removed from every page in this browser.</p>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" data-modal-cancel>Cancel</button>
+          <button type="button" class="btn btn-danger" data-modal-confirm>Delete</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo-mark"><span>✦</span></span>Heritage Trail</a>
+          <p>Explore Sharjah's landmarks, verify your visits, collect stamps and earn your place as a Heritage Guardian.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="landmarks.html">Landmarks</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="plan.html">Plan Your Visit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow us</h4>
+          <div class="social">
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+            <a href="https://x.com" aria-label="X" target="_blank" rel="noopener">X</a>
+            <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
+            <a href="https://www.tiktok.com" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
+          </div>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Sharjah Heritage Trail &middot; University of Sharjah Web Programming Project</span>
+        <a href="admin.html">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toasts" aria-live="polite"></div>
+</body>
+</html>

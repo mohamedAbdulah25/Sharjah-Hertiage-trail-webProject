@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your explorer profile, heritage passport and badges.">
+  <title>Achievements | Sharjah Heritage Trail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head><body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-mark"><span>✦</span></span>Heritage Trail</a>
+      <span class="xp-pill" id="header-xp" title="Your explorer XP">⭐ <span data-xp>300</span> XP</span>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Open menu"><span></span></label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="landmarks.html">Landmarks</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="achievements.html" class="active" aria-current="page">Achievements</a></li>
+          <li><a href="plan.html">Plan Your Visit</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Your progress</span>
+        <h1>Achievements</h1>
+        <p>Every verified visit earns XP and a passport stamp. Hit milestones to unlock badges.</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="profile">
+        <img src="img/avatar.svg" alt="Explorer avatar" class="avatar">
+        <div>
+          <div class="name-row">
+            <h2 data-explorer-name>Explorer</h2>
+            <button type="button" class="btn btn-outline btn-sm" id="edit-name">✎ Edit name</button>
+          </div>
+          <form id="name-form" class="hidden" novalidate>
+            <div class="field">
+              <label for="explorer-name">Explorer name</label>
+              <input type="text" id="explorer-name" minlength="3" maxlength="20" pattern="[A-Za-z ]{3,20}" required>
+              <span class="field-error">Use 3–20 letters and spaces.</span>
+            </div>
+          </form>
+          <p>Level: <span class="level-name" data-level>Explorer</span> · <span data-xp>300</span> XP</p>
+          <div class="xp-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><div class="xp-bar-fill" style="--progress: 50%"></div></div>
+          <div class="xp-meta"><span>100 XP to <span data-next-level>Historian</span></span><span data-stamps>2/6 stamps</span></div>
+          <ol class="level-ladder">
+            <li class="reached"><strong>Visitor</strong>0 XP</li>
+            <li class="current"><strong>Explorer</strong>200 XP</li>
+            <li><strong>Historian</strong>400 XP</li>
+            <li><strong>Heritage Guardian</strong>800 XP</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Collect them all</span>
+          <h2>Heritage Passport</h2>
+        </div>
+        <div class="passport" id="passport">
+          <div class="passport-item" data-landmark-id="heritage-museum">
+            <div class="stamp unlocked"><span><span class="stamp-icon">🏛</span>Heritage Museum</span></div>
+            <p>Sharjah Heritage Museum</p>
+          </div>
+          <div class="passport-item" data-landmark-id="al-noor">
+            <div class="stamp unlocked"><span><span class="stamp-icon">🕌</span>Al Noor Mosque</span></div>
+            <p>Al Noor Mosque</p>
+          </div>
+          <div class="passport-item" data-landmark-id="islamic-civilization">
+            <div class="stamp locked"><span><span class="stamp-icon">📜</span>Islamic Civilization</span></div>
+            <p>Museum of Islamic Civilization</p>
+          </div>
+          <div class="passport-item" data-landmark-id="art-museum">
+            <div class="stamp locked"><span><span class="stamp-icon">🎨</span>Art Museum</span></div>
+            <p>Sharjah Art Museum</p>
+          </div>
+          <div class="passport-item" data-landmark-id="al-hisn">
+            <div class="stamp locked"><span><span class="stamp-icon">🏰</span>Al Hisn Sharjah</span></div>
+            <p>Al Hisn Sharjah</p>
+          </div>
+          <div class="passport-item" data-landmark-id="al-majaz">
+            <div class="stamp locked"><span><span class="stamp-icon">⛲</span>Al Majaz Waterfront</span></div>
+            <p>Al Majaz Waterfront</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Milestones</span>
+          <h2>Badges</h2>
+          <p>2 of 6 unlocked</p>
+        </div>
+        <div class="badge-grid" id="badge-grid">
+          <article class="badge unlocked" data-badge="first-steps">
+            <div class="badge-icon" aria-hidden="true">👣</div>
+            <h3>First Steps</h3>
+            <p class="badge-desc">Passed your first verification quiz.</p>
+            <p class="badge-hint">🔒 Pass any landmark quiz.</p>
+          </article>
+          <article class="badge locked" data-badge="museum-lover">
+            <div class="badge-icon" aria-hidden="true">🏛</div>
+            <h3>Museum Lover</h3>
+            <p class="badge-desc">Visited every museum on the trail.</p>
+            <p class="badge-hint">🔒 Visit all museum landmarks.</p>
+          </article>
+          <article class="badge locked" data-badge="halfway-there">
+            <div class="badge-icon" aria-hidden="true">🧭</div>
+            <h3>Halfway There</h3>
+            <p class="badge-desc">Verified three landmarks.</p>
+            <p class="badge-hint">🔒 Verify 3 landmarks.</p>
+          </article>
+          <article class="badge unlocked" data-badge="trip-planner">
+            <div class="badge-icon" aria-hidden="true">🗺</div>
+            <h3>Trip Planner</h3>
+            <p class="badge-desc">Saved your first trip plan.</p>
+            <p class="badge-hint">🔒 Save a plan on Plan Your Visit.</p>
+          </article>
+          <article class="badge locked" data-badge="mission-complete">
+            <div class="badge-icon" aria-hidden="true">🎯</div>
+            <h3>Mission Complete</h3>
+            <p class="badge-desc">Visited every stop in a saved plan.</p>
+            <p class="badge-hint">🔒 Visit every stop in one of your plans.</p>
+          </article>
+          <article class="badge locked" data-badge="heritage-guardian">
+            <div class="badge-icon" aria-hidden="true">👑</div>
+            <h3>Heritage Guardian</h3>
+            <p class="badge-desc">Verified every landmark in Sharjah.</p>
+            <p class="badge-hint">🔒 Verify all landmarks.</p>
+          </article>
+        </div>
+        <div class="section-actions">
+          <button type="button" class="btn btn-danger" id="reset-progress">Reset progress</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal hidden" id="reset-modal" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+      <div class="modal-box">
+        <h3 id="reset-title">Reset all progress?</h3>
+        <p>This clears your XP, stamps, badges and saved plans. It can't be undone.</p>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" data-modal-cancel>Cancel</button>
+          <button type="button" class="btn btn-danger" data-modal-confirm>Reset</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo-mark"><span>✦</span></span>Heritage Trail</a>
+          <p>Explore Sharjah's landmarks, verify your visits, collect stamps and earn your place as a Heritage Guardian.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="landmarks.html">Landmarks</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="plan.html">Plan Your Visit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow us</h4>
+          <div class="social">
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+            <a href="https://x.com" aria-label="X" target="_blank" rel="noopener">X</a>
+            <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
+            <a href="https://www.tiktok.com" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
+          </div>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Sharjah Heritage Trail &middot; University of Sharjah Web Programming Project</span>
+        <a href="admin.html">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toasts" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+@media print {
+  @page {
+    margin: 1.5cm;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+  }
+
+  .site-header,
+  .site-footer,
+  .btn,
+  .icon-btn,
+  .toast-container,
+  .modal,
+  .stepper,
+  .plan-form,
+  .page-hero p,
+  .my-plans,
+  .quiz,
+  .pager,
+  video,
+  audio,
+  iframe {
+    display: none !important;
+  }
+
+  .plan-layout {
+    display: block;
+  }
+
+  .trip-summary {
+    position: static;
+    max-width: 100%;
+  }
+
+  .summary-head {
+    background: none !important;
+    color: #000 !important;
+    border-bottom: 3px solid #000;
+    border-radius: 0;
+    padding-left: 0;
+  }
+
+  .summary-body {
+    box-shadow: none;
+    border: none;
+    padding-left: 0;
+  }
+
+  .itinerary li {
+    break-inside: avoid;
+    background: #fff;
+    border: 1px solid #999;
+  }
+
+  .itinerary li::before {
+    background: #000;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+  }
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Sharjah's heritage landmarks, verify your visits and earn stamps and badges.">
+  <title>Home | Sharjah Heritage Trail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head><body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-mark"><span>✦</span></span>Heritage Trail</a>
+      <span class="xp-pill" id="header-xp" title="Your explorer XP">⭐ <span data-xp>300</span> XP</span>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Open menu"><span></span></label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="landmarks.html">Landmarks</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="plan.html">Plan Your Visit</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Discover · Visit · Collect</span>
+          <h1>Walk through 200 years of Sharjah's story</h1>
+          <p>Explore the emirate's museums, forts and waterfronts. Prove each visit with an on-site quiz, collect passport stamps and rise from Visitor to Heritage Guardian.</p>
+          <div class="hero-actions">
+            <a href="landmarks.html" class="btn btn-primary">Start Exploring →</a>
+            <a href="plan.html" class="btn btn-outline">Plan Your Visit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How it works</span>
+          <h2>Three steps to Heritage Guardian</h2>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <div class="step-icon" aria-hidden="true">🧭</div>
+            <h3>Explore</h3>
+            <p>Browse landmarks, read their stories and plan a route that fits your day.</p>
+          </li>
+          <li class="step">
+            <div class="step-icon" aria-hidden="true">📍</div>
+            <h3>Visit &amp; pass the quiz</h3>
+            <p>Each landmark has a quiz about details you can only spot in person. Pass it to verify your visit.</p>
+          </li>
+          <li class="step">
+            <div class="step-icon" aria-hidden="true">🏅</div>
+            <h3>Earn stamps &amp; badges</h3>
+            <p>Collect passport stamps, gain XP, level up and unlock achievements.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Your journey</span>
+          <h2>Explorer progress</h2>
+        </div>
+        <article class="progress-card" id="progress-card">
+          <img src="img/avatar.svg" alt="Explorer avatar" class="avatar">
+          <div class="progress-info">
+            <h3 data-explorer-name>Explorer</h3>
+            <p>Level: <span class="level-name" data-level>Explorer</span></p>
+            <div class="xp-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><div class="xp-bar-fill" style="--progress: 50%"></div></div>
+            <div class="xp-meta"><span><span data-xp>300</span> XP</span><span>Next: <span data-next-level>Historian</span> at <span data-next-xp>400</span> XP</span></div>
+          </div>
+          <div class="stat-box">
+            <strong data-stamps>2/6</strong>
+            <span>Stamps collected</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Start here</span>
+          <h2>Featured landmarks</h2>
+          <p>Three favourites to begin your trail.</p>
+        </div>
+        <div class="card-grid" id="featured-grid">
+          <article class="landmark-card visited" data-landmark-id="heritage-museum" data-category="Museum">
+            <div class="card-media">
+              <span class="tag" data-category="Museum">Museum</span>
+              <img src="img/heritage-museum-1.svg" alt="Sharjah Heritage Museum" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3><a href="landmark.html?id=heritage-museum">Sharjah Heritage Museum</a></h3>
+              <p class="card-meta"><span>⏱ 1h 30m</span><span>💰 10 AED</span></p>
+              <p>Traditional Emirati life, crafts and customs inside a restored family house.</p>
+              <div class="card-footer">
+                <span class="status visited">✅ Visited</span>
+                <span class="card-xp">+150 XP</span>
+              </div>
+            </div>
+          </article>
+          <article class="landmark-card visited" data-landmark-id="al-noor" data-category="Religious">
+            <div class="card-media">
+              <span class="tag" data-category="Religious">Religious</span>
+              <img src="img/al-noor-1.svg" alt="Al Noor Mosque" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3><a href="landmark.html?id=al-noor">Al Noor Mosque</a></h3>
+              <p class="card-meta"><span>⏱ 45m</span><span>💰 Free</span></p>
+              <p>An Ottoman-style mosque on the Khalid Lagoon, open to visitors for guided tours.</p>
+              <div class="card-footer">
+                <span class="status visited">✅ Visited</span>
+                <span class="card-xp">+150 XP</span>
+              </div>
+            </div>
+          </article>
+          <article class="landmark-card" data-landmark-id="islamic-civilization" data-category="Museum">
+            <div class="card-media">
+              <span class="tag" data-category="Museum">Museum</span>
+              <img src="img/islamic-civilization-1.svg" alt="Museum of Islamic Civilization" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3><a href="landmark.html?id=islamic-civilization">Museum of Islamic Civilization</a></h3>
+              <p class="card-meta"><span>⏱ 2h</span><span>💰 10 AED</span></p>
+              <p>Over 5,000 artefacts covering Islamic science, art and faith under a golden dome.</p>
+              <div class="card-footer">
+                <span class="status">Not visited yet</span>
+                <span class="card-xp">+150 XP</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="section-actions"><a href="landmarks.html" class="btn btn-outline">View all landmarks</a></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container video-block">
+        <div>
+          <span class="eyebrow">Watch</span>
+          <h2>Sharjah, the cultural capital</h2>
+          <p>Named UNESCO's Cultural Capital of the Arab World in 1998, Sharjah is home to more than 20 museums. See what awaits you on the trail.</p>
+          <ul class="check-list">
+            <li>Six landmarks across the old city and waterfront</li>
+            <li>Audio narration at every stop</li>
+            <li>Free trip planner with timing and costs</li>
+          </ul>
+        </div>
+        <div class="video-frame">
+          <video controls preload="none" poster="img/hero.svg">
+            <source src="media/promo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo-mark"><span>✦</span></span>Heritage Trail</a>
+          <p>Explore Sharjah's landmarks, verify your visits, collect stamps and earn your place as a Heritage Guardian.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="landmarks.html">Landmarks</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="plan.html">Plan Your Visit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow us</h4>
+          <div class="social">
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+            <a href="https://x.com" aria-label="X" target="_blank" rel="noopener">X</a>
+            <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
+            <a href="https://www.tiktok.com" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
+          </div>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Sharjah Heritage Trail &middot; University of Sharjah Web Programming Project</span>
+        <a href="admin.html">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toasts" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with the Sharjah Heritage Trail team.">
+  <title>Contact | Sharjah Heritage Trail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head><body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-mark"><span>✦</span></span>Heritage Trail</a>
+      <span class="xp-pill" id="header-xp" title="Your explorer XP">⭐ <span data-xp>300</span> XP</span>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Open menu"><span></span></label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="landmarks.html">Landmarks</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="plan.html">Plan Your Visit</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Say hello</span>
+        <h1>Contact Us</h1>
+        <p>Questions about a landmark, a quiz that seems wrong, or an idea for a new stop? We'd love to hear from you.</p>
+      </div>
+    </section>
+
+    <section class="container contact-layout">
+      <form class="panel" id="contact-form" novalidate>
+        <h2>Send a message</h2>
+        <div class="form-grid" style="margin-top:1.2rem">
+          <div class="field">
+            <label for="c-name" class="required">Full name</label>
+            <input type="text" id="c-name" name="name" minlength="3" pattern="[A-Za-z ]{3,}" autocomplete="name" required>
+            <span class="field-error">Use at least 3 letters (letters and spaces only).</span>
+          </div>
+          <div class="field">
+            <label for="c-email" class="required">Email</label>
+            <input type="email" id="c-email" name="email" autocomplete="email" required>
+            <span class="field-error">Enter a valid email address.</span>
+          </div>
+          <div class="field">
+            <label for="c-phone">Mobile number</label>
+            <input type="tel" id="c-phone" name="phone" placeholder="05XXXXXXXX" pattern="05[0-9]{8}" maxlength="10" autocomplete="tel">
+            <span class="field-error">Use the UAE format 05XXXXXXXX.</span>
+          </div>
+          <div class="field">
+            <label for="c-subject" class="required">Subject</label>
+            <select id="c-subject" name="subject" required>
+              <option value="">Choose a subject</option>
+              <option>General question</option>
+              <option>Landmark information</option>
+              <option>Quiz problem</option>
+              <option>Suggest a landmark</option>
+              <option>Feedback</option>
+            </select>
+            <span class="field-error">Choose a subject.</span>
+          </div>
+          <div class="field full">
+            <label for="c-message" class="required">Message</label>
+            <textarea id="c-message" name="message" minlength="20" maxlength="500" required></textarea>
+            <span class="hint">20–500 characters</span>
+            <span class="field-error">Write at least 20 characters.</span>
+          </div>
+        </div>
+        <p class="alert alert-success hidden" id="contact-success" role="status" style="margin-top:1rem">Thanks! Your message has been sent. We'll reply within 2 working days.</p>
+        <div class="form-actions" style="margin-top:1.2rem">
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <button type="reset" class="btn btn-outline">Clear</button>
+        </div>
+      </form>
+
+      <aside class="info-panel">
+        <section class="panel">
+          <h3>Reach us</h3>
+          <ul class="contact-info">
+            <li><span>📍</span><span>Heart of Sharjah, Al Mareija, Sharjah, UAE</span></li>
+            <li><span>✉️</span><span><a href="mailto:hello@heritagetrail.example">hello@heritagetrail.example</a></span></li>
+            <li><span>🕘</span><span>Sunday – Thursday, 9:00 – 17:00</span></li>
+          </ul>
+        </section>
+        <div class="map-embed">
+          <iframe title="Map of Sharjah" src="https://www.google.com/maps?q=Heart+of+Sharjah&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Good to know</span>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>How do I verify a visit?</summary>
+            <p>Open the landmark's page while you're there and answer its 3-question quiz. The questions are about details you can only see in person. Get all three right to earn the stamp and XP.</p>
+          </details>
+          <details>
+            <summary>Do I need an account?</summary>
+            <p>No. Your progress is saved in your browser on this device. Clearing your browser data or switching devices will start a new passport.</p>
+          </details>
+          <details>
+            <summary>Is the trip planner a real booking?</summary>
+            <p>No. It builds a suggested schedule with timings and estimated costs. Tickets are bought at each landmark.</p>
+          </details>
+          <details>
+            <summary>Are the opening hours accurate?</summary>
+            <p>They're a guide and can change during Ramadan and public holidays. Check the official museum website before you go.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo-mark"><span>✦</span></span>Heritage Trail</a>
+          <p>Explore Sharjah's landmarks, verify your visits, collect stamps and earn your place as a Heritage Guardian.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="landmarks.html">Landmarks</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="plan.html">Plan Your Visit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow us</h4>
+          <div class="social">
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+            <a href="https://x.com" aria-label="X" target="_blank" rel="noopener">X</a>
+            <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
+            <a href="https://www.tiktok.com" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
+          </div>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Sharjah Heritage Trail &middot; University of Sharjah Web Programming Project</span>
+        <a href="admin.html">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toasts" aria-live="polite"></div>
+</body>
+</html>
