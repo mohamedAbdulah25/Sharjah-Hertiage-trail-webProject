@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     img1: f("lm-img1"),
     img2: f("lm-img2"),
     img3: f("lm-img3"),
-    audio: f("lm-audio"),
     mapX: f("lm-x"),
     mapY: f("lm-y")
   };
@@ -129,7 +128,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const slugify = (text) => text.toLowerCase().trim().replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
   const imagePattern = /^(https?:\/\/\S+|[\w\-./]+\.(svg|png|jpe?g|webp|gif|avif))$/i;
-  const audioPattern = /^(https?:\/\/\S+|[\w\-./]+\.(mp3|ogg|wav|m4a))$/i;
   const num = (input) => Number(input.value);
   const isInt = (input) => input.value !== "" && Number.isInteger(num(input));
 
@@ -153,7 +151,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     img1: () => (!imagePattern.test(fields.img1.value.trim()) ? "Enter an image URL (https://...) or path ending in .jpg, .png, .svg or .webp." : ""),
     img2: () => (fields.img2.value.trim() && !imagePattern.test(fields.img2.value.trim()) ? "Enter a valid image URL or path." : ""),
     img3: () => (fields.img3.value.trim() && !imagePattern.test(fields.img3.value.trim()) ? "Enter a valid image URL or path." : ""),
-    audio: () => (fields.audio.value.trim() && !audioPattern.test(fields.audio.value.trim()) ? "Enter an audio URL or path ending in .mp3, .ogg, .wav or .m4a." : ""),
     mapX: () => (fields.mapX.value === "" || num(fields.mapX) < 0 || num(fields.mapX) > 100 ? "Enter a number from 0 to 100." : ""),
     mapY: () => (fields.mapY.value === "" || num(fields.mapY) < 0 || num(fields.mapY) > 100 ? "Enter a number from 0 to 100." : "")
   };
@@ -236,7 +233,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     fields.img1.value = l.images[0] || "";
     fields.img2.value = l.images[1] || "";
     fields.img3.value = l.images[2] || "";
-    fields.audio.value = l.audio || "";
     fields.mapX.value = l.mapX;
     fields.mapY.value = l.mapY;
     form.querySelectorAll('[name="closedDays"]').forEach((box) => (box.checked = l.closedDays.includes(Number(box.value))));
@@ -280,7 +276,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       close: fields.close.value,
       closedDays: [...form.querySelectorAll('[name="closedDays"]:checked')].map((box) => Number(box.value)),
       images: [fields.img1, fields.img2, fields.img3].map((i) => i.value.trim()).filter(Boolean),
-      audio: fields.audio.value.trim(),
       xp: num(fields.xp),
       mapX: num(fields.mapX),
       mapY: num(fields.mapY),

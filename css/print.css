@@ -22,7 +22,6 @@
   .quiz,
   .pager,
   video,
-  audio,
   iframe {
     display: none !important;
   }

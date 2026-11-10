@@ -67,12 +67,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         </figure>` : ""}
         <p>${escapeHtml(landmark.description)}</p>
 
-        ${landmark.audio ? `
-        <h2>Audio guide</h2>
-        <audio controls preload="none">
-          <source src="${escapeHtml(landmark.audio)}" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>` : ""}
 
         <section class="quiz" id="quiz" aria-labelledby="quiz-title">
           <div class="quiz-head">

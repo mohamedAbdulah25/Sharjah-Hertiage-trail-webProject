@@ -31,7 +31,7 @@ All content is rendered by JavaScript from `data/landmarks.json`, plus any landm
 |---|---|---|
 | Home | `index.html` | Hero, how it works, explorer progress, featured landmarks, promo video |
 | Landmarks | `landmarks.html` | All landmarks with category filter and search |
-| Landmark detail | `landmark.html?id=<id>` | Gallery, info, audio guide, verification quiz, passport stamp |
+| Landmark detail | `landmark.html?id=<id>` | Gallery, info, verification quiz, passport stamp |
 | Map | `map.html` | Illustrated map with clickable pins (CSS `:target` popups) |
 | Achievements | `achievements.html` | Profile, level ladder, heritage passport, badges |
 | Plan Your Visit | `plan.html` | Landmark picker, trip details, contact details, trip summary, saved plans |
@@ -48,7 +48,7 @@ css/style.css      shared styles
 css/print.css      print layout for the trip plan
 img/photos/        landmark photos
 img/               map, avatar and pattern graphics
-media/             audio and video (to be supplied)
+media/             promo video (to be supplied)
 js/data.js         levels, badges and settings
 js/core.js         storage, progress, badges, toasts, helpers
 js/<page>.js       one script per page
@@ -73,7 +73,6 @@ Still to supply:
 | File | Content |
 |---|---|
 | `media/promo.mp4` | Promotional video on the home page |
-| `media/narration-<id>.mp3` | Audio narration for each landmark |
 
 Landmark ids: `heritage-museum`, `al-noor`, `islamic-civilization`, `art-museum`, `al-hisn`, `al-majaz`.
 

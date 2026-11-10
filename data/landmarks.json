@@ -14,7 +14,6 @@
     "images": [
       "img/photos/heritage-museum.jpg"
     ],
-    "audio": "media/narration-heritage-museum.mp3",
     "xp": 150,
     "mapX": 58,
     "mapY": 38,
@@ -65,7 +64,6 @@
     "images": [
       "img/photos/al-noor.jpg"
     ],
-    "audio": "media/narration-al-noor.mp3",
     "xp": 150,
     "mapX": 52,
     "mapY": 52,
@@ -114,7 +112,6 @@
     "images": [
       "img/photos/islamic-civilization.jpg"
     ],
-    "audio": "media/narration-islamic-civilization.mp3",
     "xp": 150,
     "mapX": 51,
     "mapY": 22,
@@ -163,7 +160,6 @@
     "images": [
       "img/photos/art-museum.jpg"
     ],
-    "audio": "media/narration-art-museum.mp3",
     "xp": 100,
     "mapX": 70,
     "mapY": 30,
@@ -212,7 +208,6 @@
     "images": [
       "img/photos/al-hisn.jpg"
     ],
-    "audio": "media/narration-al-hisn.mp3",
     "xp": 150,
     "mapX": 66,
     "mapY": 48,
@@ -261,7 +256,6 @@
     "images": [
       "img/photos/al-majaz.jpg"
     ],
-    "audio": "media/narration-al-majaz.mp3",
     "xp": 100,
     "mapX": 61,
     "mapY": 68,
