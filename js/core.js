@@ -398,7 +398,7 @@ function updateHeader() {
   const loginLink = document.querySelector('.main-nav a[href="login.html"]');
   if (loginLink) {
     const user = getCurrentUser();
-    loginLink.textContent = user ? `👤 ${user.name.split(" ")[0]}` : isAdmin() ? "Admin" : "Login";
+    loginLink.textContent = user ? `👤 ${user.name.split(" ")[0]}` : "Login";
   }
 }
 
