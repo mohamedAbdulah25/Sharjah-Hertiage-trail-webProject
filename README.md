@@ -21,7 +21,8 @@ All content is rendered by JavaScript from `data/landmarks.json`, plus any landm
 - **XP and levels:** Visitor (0) → Explorer (200) → Historian (400) → Heritage Guardian (800).
 - **Badges:** First Steps, Museum Lover, Halfway There, Trip Planner, Mission Complete, Heritage Guardian.
 - **Trip planner:** add, remove and drag to reorder stops; automatic times, opening-hour and closed-day warnings, cost (students 50% off) and XP totals; full validation; save, confirm, print, reopen and delete plans.
-- **Admin:** login, add/edit/delete landmarks with quizzes, restore edited built-ins, export and import JSON.
+- **Explorer accounts:** sign up (name, email, password with strength meter and confirmation) and log in. Each account keeps its own XP, stamps, badges and plans; guest progress moves into a new account on sign-up.
+- **Admin:** separate admin login from the Login page, add/edit/delete landmarks with quizzes, restore edited built-ins, export and import JSON.
 - **Validation:** custom error messages on every form (trip planner, contact, explorer name, admin login and landmark form).
 
 ## Pages
@@ -35,13 +36,14 @@ All content is rendered by JavaScript from `data/landmarks.json`, plus any landm
 | Achievements | `achievements.html` | Profile, level ladder, heritage passport, badges |
 | Plan Your Visit | `plan.html` | Landmark picker, trip details, contact details, trip summary, saved plans |
 | Contact | `contact.html` | Contact form, FAQ, embedded map |
-| Login | `admin.html` | Admin login and landmark management |
+| Login | `login.html` | Explorer log in and sign up, plus an Admin login button that switches to the admin form |
+| Admin dashboard | `admin.html` | Landmark management (admins only; others are sent to the login page) |
 
 ## Folder structure
 
 ```
 index.html  landmarks.html  landmark.html  map.html
-achievements.html  plan.html  contact.html  admin.html
+achievements.html  plan.html  contact.html  login.html  admin.html
 css/style.css      shared styles
 css/print.css      print layout for the trip plan
 img/photos/        landmark photos
@@ -55,10 +57,12 @@ data/landmarks.json built-in landmark data
 
 ## Admin login
 
+On the Login page, press **Admin login** in the side panel, then sign in with:
+
 - Username: `admin`
 - Password: `admin`
 
-This login runs entirely in the browser and is for demonstration only. It is not real security: the credentials are visible in `js/data.js`, and quiz answers are visible in `data/landmarks.json`.
+This login runs entirely in the browser and is for demonstration only. It is not real security: the admin credentials are visible in `js/data.js`, quiz answers are visible in `data/landmarks.json`, and explorer accounts (with hashed passwords) are stored in the browser's localStorage, so they only exist on that device.
 
 ## Media to supply
 

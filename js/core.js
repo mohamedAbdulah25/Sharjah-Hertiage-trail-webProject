@@ -87,23 +87,86 @@ function showLoadError(container) {
   container.innerHTML = `<p class="alert alert-error">Couldn't load the landmark data. If you opened this file directly, run the site through a local server (see README).</p>`;
 }
 
+/* Accounts */
+
+function getUsers() {
+  const users = storage.get(STORAGE_KEYS.users, []);
+  return Array.isArray(users) ? users : [];
+}
+
+function getCurrentUser() {
+  const email = storage.get(STORAGE_KEYS.currentUser, null);
+  return email ? getUsers().find((user) => user.email === email) || null : null;
+}
+
+function isAdmin() {
+  return session.get(STORAGE_KEYS.admin) === "true";
+}
+
+async function hashPassword(password) {
+  const text = `sht:${password}`;
+  if (window.crypto && crypto.subtle) {
+    const buffer = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+    return [...new Uint8Array(buffer)].map((b) => b.toString(16).padStart(2, "0")).join("");
+  }
+  let hash = 0;
+  for (const char of text) {
+    hash = (hash * 31 + char.charCodeAt(0)) | 0;
+  }
+  return `fallback-${hash}`;
+}
+
+async function registerUser(name, email, password) {
+  const users = getUsers();
+  const user = { name, email: email.toLowerCase(), passwordHash: await hashPassword(password), createdAt: new Date().toISOString() };
+  users.push(user);
+  storage.set(STORAGE_KEYS.users, users);
+  const guest = getProgress();
+  storage.set(`${STORAGE_KEYS.progress}:${user.email}`, { ...guest, name });
+  storage.remove(STORAGE_KEYS.progress);
+  storage.set(STORAGE_KEYS.currentUser, user.email);
+  updateHeader();
+  return user;
+}
+
+async function loginUser(email, password) {
+  const user = getUsers().find((u) => u.email === email.toLowerCase());
+  if (!user || user.passwordHash !== (await hashPassword(password))) {
+    return null;
+  }
+  storage.set(STORAGE_KEYS.currentUser, user.email);
+  updateHeader();
+  return user;
+}
+
+function logoutUser() {
+  storage.remove(STORAGE_KEYS.currentUser);
+  updateHeader();
+}
+
 /* Progress */
 
+function progressKey() {
+  const user = getCurrentUser();
+  return user ? `${STORAGE_KEYS.progress}:${user.email}` : STORAGE_KEYS.progress;
+}
+
 function defaultProgress() {
-  return { name: "Explorer", xp: 0, visited: [], badges: [], newBadges: [], plans: [] };
+  const user = getCurrentUser();
+  return { name: user ? user.name : "Explorer", xp: 0, visited: [], badges: [], newBadges: [], plans: [] };
 }
 
 function getProgress() {
-  return { ...defaultProgress(), ...storage.get(STORAGE_KEYS.progress, {}) };
+  return { ...defaultProgress(), ...storage.get(progressKey(), {}) };
 }
 
 function saveProgress(progress) {
-  storage.set(STORAGE_KEYS.progress, progress);
+  storage.set(progressKey(), progress);
   updateHeader();
 }
 
 function resetProgress() {
-  storage.remove(STORAGE_KEYS.progress);
+  storage.remove(progressKey());
   updateHeader();
 }
 
@@ -332,9 +395,10 @@ function renderLevelInfo(scope, progress, totalLandmarks) {
 function updateHeader() {
   const progress = getProgress();
   document.querySelectorAll("#header-xp [data-xp]").forEach((el) => (el.textContent = progress.xp));
-  const loginLink = document.querySelector('.main-nav a[href="admin.html"]');
+  const loginLink = document.querySelector('.main-nav a[href="login.html"]');
   if (loginLink) {
-    loginLink.textContent = session.get(STORAGE_KEYS.admin) === "true" ? "Admin" : "Login";
+    const user = getCurrentUser();
+    loginLink.textContent = user ? `👤 ${user.name.split(" ")[0]}` : isAdmin() ? "Admin" : "Login";
   }
 }
 

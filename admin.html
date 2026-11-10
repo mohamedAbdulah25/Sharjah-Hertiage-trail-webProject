@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Admin login and landmark management.">
-  <title>Login | Sharjah Heritage Trail</title>
+  <meta name="description" content="Manage landmarks and quizzes.">
+  <title>Admin Dashboard | Sharjah Heritage Trail</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
@@ -26,46 +26,25 @@
           <li><a href="achievements.html">Achievements</a></li>
           <li><a href="plan.html">Plan Your Visit</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="admin.html">Login</a></li>
+          <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="container">
-      <form class="admin-login" id="login-form" novalidate>
-        <div class="lock" aria-hidden="true">🔐</div>
-        <h1>Admin Login</h1>
-        <p class="hint" style="text-align:center">Sign in to manage landmarks and quizzes.</p>
-        <div class="field">
-          <label for="admin-user" class="required">Username</label>
-          <input type="text" id="admin-user" name="username" autocomplete="username" required>
-          <span class="field-error">Enter your username.</span>
-        </div>
-        <div class="field">
-          <label for="admin-pass" class="required">Password</label>
-          <div class="password-wrap">
-            <input type="password" id="admin-pass" name="password" autocomplete="current-password" required>
-            <button type="button" class="password-toggle" id="toggle-pass" aria-label="Show password">Show</button>
-          </div>
-          <span class="field-error">Enter your password.</span>
-        </div>
-        <p class="alert alert-error hidden" id="login-error" role="alert">Incorrect username or password.</p>
-        <button type="submit" class="btn btn-teal btn-block">Admin Login</button>
-      </form>
-    </section>
 
     <section class="section hidden" id="dashboard">
       <div class="container">
         <div class="admin-bar">
           <div>
+            <span class="eyebrow">Signed in as admin</span>
             <h1>Admin Dashboard</h1>
           </div>
           <div>
             <button type="button" class="btn btn-outline btn-sm" id="export-json">⬇ Export JSON</button>
             <label class="btn btn-outline btn-sm" for="import-json">⬆ Import JSON</label>
-            <input type="file" id="import-json" accept="application/json" class="visually-hidden">
+            <input type="file" id="import-json" accept="application/json,.json" class="visually-hidden">
             <button type="button" class="btn btn-danger btn-sm" id="logout">Log out</button>
           </div>
         </div>
@@ -376,7 +355,7 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 Sharjah Heritage Trail &middot; University of Sharjah Web Programming Project</span>
-        <a href="admin.html">Admin</a>
+        <a href="login.html?admin">Admin login</a>
       </div>
     </div>
   </footer>

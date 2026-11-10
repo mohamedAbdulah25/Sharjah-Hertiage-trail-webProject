@@ -30,5 +30,7 @@ const ADMIN_PASSWORD = "admin";
 const STORAGE_KEYS = {
   progress: "sht-progress",
   custom: "sht-customLandmarks",
-  admin: "sht-admin"
+  admin: "sht-admin",
+  users: "sht-users",
+  currentUser: "sht-current-user"
 };

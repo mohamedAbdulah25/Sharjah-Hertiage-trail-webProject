@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const loginForm = document.getElementById("login-form");
-  const loginSection = loginForm.closest("section");
-  const userInput = document.getElementById("admin-user");
-  const passInput = document.getElementById("admin-pass");
-  const togglePass = document.getElementById("toggle-pass");
-  const loginError = document.getElementById("login-error");
+  if (!isAdmin()) {
+    location.replace("login.html?admin");
+    return;
+  }
+
   const dashboard = document.getElementById("dashboard");
   const table = document.getElementById("admin-table");
   const form = document.getElementById("landmark-form");
@@ -56,55 +55,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     showLoadError(table.closest(".table-wrap"));
   }
 
-  /* Login */
+  /* Session */
 
-  const isLoggedIn = () => session.get(STORAGE_KEYS.admin) === "true";
-
-  const showView = () => {
-    const loggedIn = isLoggedIn();
-    loginSection.classList.toggle("hidden", loggedIn);
-    dashboard.classList.toggle("hidden", !loggedIn);
-    document.title = `${loggedIn ? "Admin Dashboard" : "Login"} | Sharjah Heritage Trail`;
-    updateHeader();
-    if (loggedIn) renderTable();
-  };
-
-  togglePass.addEventListener("click", () => {
-    const show = passInput.type === "password";
-    passInput.type = show ? "text" : "password";
-    togglePass.textContent = show ? "Hide" : "Show";
-    togglePass.setAttribute("aria-label", show ? "Hide password" : "Show password");
-  });
-
-  [userInput, passInput].forEach((input) => {
-    input.addEventListener("input", () => {
-      setFieldError(input, "");
-      loginError.classList.add("hidden");
-    });
-  });
-
-  loginForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const okUser = setFieldError(userInput, userInput.value.trim() ? "" : "Enter your username.");
-    const okPass = setFieldError(passInput, passInput.value ? "" : "Enter your password.");
-    if (!okUser || !okPass) return;
-    if (userInput.value.trim() === ADMIN_USERNAME && passInput.value === ADMIN_PASSWORD) {
-      session.set(STORAGE_KEYS.admin, "true");
-      loginForm.reset();
-      showView();
-      showToast("Welcome back, admin.", "🔓");
-    } else {
-      loginError.classList.remove("hidden");
-      passInput.value = "";
-      passInput.focus();
-    }
-  });
+  dashboard.classList.remove("hidden");
+  updateHeader();
 
   f("logout").addEventListener("click", () => {
     session.remove(STORAGE_KEYS.admin);
-    resetForm();
-    showView();
-    showToast("Logged out.", "🔒");
+    location.href = "login.html";
   });
 
   /* Table */
@@ -398,5 +356,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     reader.readAsText(file);
   });
 
-  showView();
+  renderTable();
 });
