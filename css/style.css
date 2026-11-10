@@ -999,12 +999,6 @@ legend {
   color: var(--danger);
 }
 
-.alert-warning {
-  background: color-mix(in srgb, var(--warning) 12%, var(--surface));
-  border-color: var(--warning);
-  color: var(--warning);
-}
-
 /* Landmark detail */
 
 .breadcrumb {
@@ -1266,11 +1260,6 @@ legend {
   accent-color: var(--gold);
 }
 
-.quiz-option.correct {
-  border-color: #6cc08f;
-  background: rgba(108, 192, 143, 0.25);
-}
-
 .quiz-option.wrong {
   border-color: #ff8a80;
   background: rgba(255, 138, 128, 0.2);
@@ -1487,8 +1476,7 @@ legend {
   overflow: hidden;
 }
 
-.map-popup:target,
-.map-popup.open {
+.map-popup:target {
   display: block;
   animation: pop 0.35s ease-out;
 }
@@ -2293,36 +2281,6 @@ legend {
 
 /* Admin */
 
-.admin-login {
-  max-width: 420px;
-  margin: 4rem auto;
-  padding: 2.2rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-}
-
-.admin-login h1 {
-  font-size: 1.8rem;
-  text-align: center;
-}
-
-.admin-login .lock {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--teal);
-  color: #fff;
-  font-size: 1.8rem;
-}
-
 .password-wrap {
   position: relative;
 }
@@ -2644,29 +2602,6 @@ legend {
   padding: 0.25rem 0;
 }
 
-.social {
-  display: flex;
-  gap: 0.6rem;
-}
-
-.social a {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 1px solid #3a4f52;
-  font-weight: 800;
-  font-size: 0.85rem;
-  transition: background-color 0.2s, border-color 0.2s;
-}
-
-.social a:hover {
-  background: var(--terracotta);
-  border-color: var(--terracotta);
-  color: #fff;
-}
-
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
@@ -2885,8 +2820,7 @@ legend {
     padding: 0.8rem 1rem;
   }
 
-  .nav-toggle:checked ~ .main-nav,
-  .main-nav.open {
+  .nav-toggle:checked ~ .main-nav {
     max-height: 480px;
   }
 
@@ -3038,8 +2972,7 @@ legend {
     transform: none;
   }
 
-  .map-popup:target,
-  .map-popup.open {
+  .map-popup:target {
     animation: rise 0.35s ease-out;
   }
 

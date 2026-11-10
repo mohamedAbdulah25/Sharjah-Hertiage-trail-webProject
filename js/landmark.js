@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
 
   const clearMarks = () => {
-    form.querySelectorAll(".quiz-option").forEach((option) => option.classList.remove("wrong", "correct"));
+    form.querySelectorAll(".quiz-option").forEach((option) => option.classList.remove("wrong"));
     fail.classList.add("hidden");
   };
 
