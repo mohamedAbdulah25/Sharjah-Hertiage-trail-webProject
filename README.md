@@ -29,7 +29,7 @@ All content is rendered by JavaScript from `data/landmarks.json`, plus any landm
 
 | Page | File | Purpose |
 |---|---|---|
-| Home | `index.html` | Hero, how it works, explorer progress, featured landmarks, promo video |
+| Home | `index.html` | Hero, how it works, explorer progress, featured landmarks |
 | Landmarks | `landmarks.html` | All landmarks with category filter and search |
 | Landmark detail | `landmark.html?id=<id>` | Gallery, info, verification quiz, passport stamp |
 | Map | `map.html` | Illustrated map with clickable pins (CSS `:target` popups) |
@@ -48,7 +48,6 @@ css/style.css      shared styles
 css/print.css      print layout for the trip plan
 img/photos/        landmark photos
 img/               map, avatar and pattern graphics
-media/             promo video (to be supplied)
 js/data.js         levels, badges and settings
 js/core.js         storage, progress, badges, toasts, helpers
 js/<page>.js       one script per page
@@ -64,15 +63,9 @@ On the Login page, press **Admin login** in the side panel, then sign in with:
 
 This login runs entirely in the browser and is for demonstration only. It is not real security: the admin credentials are visible in `js/data.js`, quiz answers are visible in `data/landmarks.json`, and explorer accounts (with hashed passwords) are stored in the browser's localStorage, so they only exist on that device.
 
-## Media to supply
+## Photos
 
-Landmark photos are in `img/photos/`, one per landmark, named by landmark id (e.g. `img/photos/al-noor.jpg`). The home page hero uses `al-noor.jpg` and the promo video poster uses `al-majaz.jpg`. To add more photos to a landmark's gallery, add their paths to its `images` array in `data/landmarks.json` (up to 3).
-
-Still to supply:
-
-| File | Content |
-|---|---|
-| `media/promo.mp4` | Promotional video on the home page |
+Landmark photos are in `img/photos/`, one per landmark, named by landmark id (e.g. `img/photos/al-noor.jpg`). The home page hero uses `al-noor.jpg` and the "Discover" section uses `al-majaz.jpg`. To add more photos to a landmark's gallery, add their paths to its `images` array in `data/landmarks.json` (up to 3).
 
 Landmark ids: `heritage-museum`, `al-noor`, `islamic-civilization`, `art-museum`, `al-hisn`, `al-majaz`.
 

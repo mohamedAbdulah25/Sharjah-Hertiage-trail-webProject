@@ -21,7 +21,6 @@
   .my-plans,
   .quiz,
   .pager,
-  video,
   iframe {
     display: none !important;
   }

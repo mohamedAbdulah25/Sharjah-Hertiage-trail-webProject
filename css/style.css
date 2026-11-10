@@ -77,7 +77,6 @@ main {
 }
 
 img,
-video,
 iframe,
 svg {
   display: block;
@@ -1471,28 +1470,6 @@ legend {
   transform: rotate(-45deg) scale(1.2);
 }
 
-.pin.visited::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid var(--terracotta);
-  animation: ping 1.8s infinite;
-}
-
-@keyframes ping {
-  from {
-    transform: scale(0.6);
-    opacity: 1;
-  }
-  to {
-    transform: scale(2.4);
-    opacity: 0;
-  }
-}
-
 .map-popup {
   display: none;
   position: absolute;
@@ -2579,27 +2556,36 @@ legend {
   }
 }
 
-/* Video */
+/* Feature photo */
 
-.video-block {
+.feature-block {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   gap: 2.5rem;
   align-items: center;
 }
 
-.video-frame {
+.feature-photo {
+  position: relative;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
   border: 6px solid var(--surface);
 }
 
-.video-frame video {
+.feature-photo img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #000;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+}
+
+.feature-photo figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.85rem;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
 }
 
 .check-list li {
@@ -2924,7 +2910,7 @@ legend {
   .plan-layout,
   .contact-layout,
   .map-wrap,
-  .video-block {
+  .feature-block {
     grid-template-columns: 1fr;
   }
 
